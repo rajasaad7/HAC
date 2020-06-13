@@ -25,9 +25,6 @@ app = Flask(__name__)
 def hello():
     return "Hello World!"
 
-
-app.run()
-
 fps_time = 0
 address = os.getcwd()
 def  preditcition():
