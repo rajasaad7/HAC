@@ -3,7 +3,6 @@ tensorflow==1.13.0rc1
 psutil
 slidingwindow==0.0.13
 slim==0.5.9
-mkl==2019.0
 scipy
 numpy==1.18.1
 opencv-python
