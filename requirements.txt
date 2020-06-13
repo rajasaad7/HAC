@@ -6,3 +6,4 @@ slim==0.5.9
 scipy
 numpy==1.18.1
 opencv-python
+gunicorn
