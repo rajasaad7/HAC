@@ -20,14 +20,20 @@ def hello():
 
 @app.route("/getimage", methods=["POST"])
 def getimage():
-    data = (request.data.decode()).split(",")[1]
-    body = base64.decodebytes(data.encode("utf-8"))
-    img = Image.open(BytesIO(body))
-    img = np.array(img)
-    RGB_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-    scene_class = label_img_scene.classify(RGB_img)
-    return scene_class
+    try:
+        data = (request.data.decode()).split(",")[1]
+        body = base64.decodebytes(data.encode("utf-8"))
+        img = Image.open(BytesIO(body))
+        img = np.array(img)
+        RGB_img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        # cv2.imshow("name", RGB_img)
+        # cv2.waitKey(0)
+        # cv2.destroyAllWindows()
+        scene_class = label_img_scene.classify(RGB_img)
+        return scene_class
+    except:
+        return "error"
 
 
 if __name__ == "__main__":
-    app.run(threaded=True)
+    app.run()
