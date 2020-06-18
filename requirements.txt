@@ -25,8 +25,8 @@ scipy==1.4.1
 six==1.15.0
 slidingwindow==0.0.13
 slim==0.5.9
-tensorboard==1.12.2
-tensorflow==1.13.0rc1
-tensorflow-estimator==1.13.0
+tensorboard==1.15.0
+tensorflow==1.15.2
+tensorflow-estimator==1.15.1
 yarl==1.4.2
 zipp==3.1.0
