@@ -14,8 +14,8 @@ CORS(app)
 
 
 @app.route("/", methods=["GET", "POST"])
-def hello():
-    return request.json["id"]
+def index():
+    return "<h1> Deployed to Heroku</h1>"
 
 
 @app.route("/getimage", methods=["POST"])
