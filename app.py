@@ -28,3 +28,6 @@ def getimage():
     scene_class = label_img_scene.classify(RGB_img)
     return scene_class
 
+
+if __name__ == "__main__":
+    app.run(threaded=True)
