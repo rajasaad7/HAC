@@ -4,18 +4,21 @@ import cv2
 import numpy as np
 from flask import Flask, make_response, request, jsonify, current_app
 
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 import base64
 from PIL import Image
 from io import BytesIO
 
 app = Flask(__name__)
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
+app.config["CORS_HEADERS"] = "Content-Type"
+
 
 @cross_origin()
 @app.route("/", methods=["GET", "POST"])
 def index():
     return "<h1> Deployed to Heroku</h1>"
+
 
 @cross_origin()
 @app.route("/getimage", methods=["POST"])
