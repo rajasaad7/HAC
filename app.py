@@ -10,14 +10,14 @@ from PIL import Image
 from io import BytesIO
 
 app = Flask(__name__)
-CORS(app)
+cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
-
+@cross_origin()
 @app.route("/", methods=["GET", "POST"])
 def index():
     return "<h1> Deployed to Heroku</h1>"
 
-
+@cross_origin()
 @app.route("/getimage", methods=["POST"])
 def getimage():
     try:
