@@ -97,7 +97,7 @@ def classify(image_file):
     with tf.compat.v1.Session(graph=graph) as sess:
         results = sess.run(output_operation.outputs[0], {input_operation.outputs[0]: t})
     results = np.squeeze(results)
-    top_k = results.argsort()[-6:][::-1]
+    top_k = results.argsort()[-3:][::-1]
     labels = load_labels(label_file)
     template = "none"
     for i in top_k:
