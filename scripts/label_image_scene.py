@@ -101,7 +101,7 @@ def classify(image_file):
     labels = load_labels(label_file)
     template = "none"
     for i in top_k:
-        if labels[i] == "waving hands":
+        if labels[i] == "writing on a board":
             template = labels[i]
 
     return template
