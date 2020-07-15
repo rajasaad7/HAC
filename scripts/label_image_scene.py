@@ -97,11 +97,14 @@ def classify(image_file):
     with tf.compat.v1.Session(graph=graph) as sess:
         results = sess.run(output_operation.outputs[0], {input_operation.outputs[0]: t})
     results = np.squeeze(results)
-    top_k = results.argsort()[-3:][::-1]
+    top_k = results.argsort()[-2:][::-1]
     labels = load_labels(label_file)
-    template = labels[0]
-    # for i in top_k:
-    #     if labels[i] == "writing on a board":
-    #         template = labels[i]
+    template = "none"
+    for i in top_k:
+        if labels[i] == "writing on a board":
+            template = labels[i]
+            break
+
+    return template
 
     return template
