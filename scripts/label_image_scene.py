@@ -99,9 +99,9 @@ def classify(image_file):
     results = np.squeeze(results)
     top_k = results.argsort()[-3:][::-1]
     labels = load_labels(label_file)
-    template = "none"
-    for i in top_k:
-        if labels[i] == "writing on a board":
-            template = labels[i]
+    template = labels[0]
+    # for i in top_k:
+    #     if labels[i] == "writing on a board":
+    #         template = labels[i]
 
     return template
